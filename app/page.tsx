@@ -1,101 +1,216 @@
-import Image from "next/image";
+import Link from 'next/link'
+import { Button } from '@/components/ui/button'
+import { Badge } from '@/components/ui/badge'
+import { CheckCircle, Zap, Shield, BarChart3, ArrowRight } from 'lucide-react'
 
-export default function Home() {
+export default function LandingPage() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="https://nextjs.org/icons/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted">
+      {/* Header */}
+      <header className="container mx-auto px-4 py-6">
+        <nav className="flex items-center justify-between">
+          <div className="flex items-center gap-2">
+            <div className="w-8 h-8 rounded-lg bg-primary flex items-center justify-center">
+              <span className="text-primary-foreground font-bold">S</span>
+            </div>
+            <span className="font-semibold text-xl">SiteGPT</span>
+          </div>
+          <div className="flex items-center gap-4">
+            <Link href="/auth" className="text-sm text-muted-foreground hover:text-foreground">
+              Sign In
+            </Link>
+            <Button asChild size="sm">
+              <Link href="/app">Try it now</Link>
+            </Button>
+          </div>
+        </nav>
+      </header>
 
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="https://nextjs.org/icons/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+      {/* Hero */}
+      <section className="container mx-auto px-4 py-20 text-center">
+        <Badge variant="secondary" className="mb-4">
+          Verified Resolution Agent for Shopify
+        </Badge>
+        <h1 className="text-4xl md:text-6xl font-bold tracking-tight mb-6">
+          Resolve tickets with
+          <span className="text-primary"> verifiable AI</span>
+        </h1>
+        <p className="text-xl text-muted-foreground max-w-2xl mx-auto mb-8">
+          Handle WISMO and Returns tickets automatically with grounded data lookups,
+          policy enforcement, citations, and complete audit trails.
+        </p>
+        <div className="flex flex-col sm:flex-row gap-4 justify-center">
+          <Button asChild size="lg">
+            <Link href="/app">
+              Try it now - No signup required
+              <ArrowRight className="ml-2 h-4 w-4" />
+            </Link>
+          </Button>
+          <Button variant="outline" size="lg" asChild>
+            <Link href="#features">Learn more</Link>
+          </Button>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="https://nextjs.org/icons/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
+        <p className="text-sm text-muted-foreground mt-4">
+          Free tier: 50 resolutions/month
+        </p>
+      </section>
+
+      {/* Demo Preview */}
+      <section className="container mx-auto px-4 py-12">
+        <div className="max-w-4xl mx-auto bg-card rounded-xl shadow-2xl border overflow-hidden">
+          <div className="bg-muted px-4 py-2 flex items-center gap-2">
+            <div className="w-3 h-3 rounded-full bg-red-500" />
+            <div className="w-3 h-3 rounded-full bg-yellow-500" />
+            <div className="w-3 h-3 rounded-full bg-green-500" />
+            <span className="ml-2 text-sm text-muted-foreground">SiteGPT Resolver</span>
+          </div>
+          <div className="p-6 grid md:grid-cols-2 gap-6">
+            <div className="space-y-4">
+              <div className="text-sm font-medium">Incoming Ticket</div>
+              <div className="bg-muted p-4 rounded-lg">
+                <div className="font-medium">Where is my order?</div>
+                <div className="text-sm text-muted-foreground mt-2">
+                  Hi, I ordered some wireless earbuds last week and haven&apos;t received them yet.
+                  My order number is ORD-2024-1001...
+                </div>
+              </div>
+            </div>
+            <div className="space-y-4">
+              <div className="text-sm font-medium">Verified Response</div>
+              <div className="bg-green-50 dark:bg-green-950 p-4 rounded-lg border border-green-200 dark:border-green-800">
+                <Badge className="bg-green-100 text-green-800 mb-2">WISMO - 92% confidence</Badge>
+                <div className="text-sm">
+                  <p className="font-medium">Order found: ORD-2024-1001</p>
+                  <p className="text-muted-foreground">Status: Shipped via UPS</p>
+                  <p className="text-muted-foreground">ETA: Jan 2, 2025</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Features */}
+      <section id="features" className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold text-center mb-12">
+          Enterprise-grade resolution, startup simple
+        </h2>
+        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+          {[
+            {
+              icon: Zap,
+              title: 'Intent Detection',
+              description: 'AI + rules-based classification for WISMO, Returns, and more',
+            },
+            {
+              icon: Shield,
+              title: 'Policy Engine',
+              description: 'Automatic checks for return windows, final sales, and delivery claims',
+            },
+            {
+              icon: CheckCircle,
+              title: 'Citations',
+              description: 'Every claim backed by data sources - orders, tracking, policies',
+            },
+            {
+              icon: BarChart3,
+              title: 'Audit Trail',
+              description: 'Append-only logs for compliance and quality assurance',
+            },
+          ].map((feature) => (
+            <div key={feature.title} className="text-center">
+              <div className="w-12 h-12 rounded-lg bg-primary/10 flex items-center justify-center mx-auto mb-4">
+                <feature.icon className="h-6 w-6 text-primary" />
+              </div>
+              <h3 className="font-semibold mb-2">{feature.title}</h3>
+              <p className="text-sm text-muted-foreground">{feature.description}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* Pricing Preview */}
+      <section className="container mx-auto px-4 py-20">
+        <h2 className="text-3xl font-bold text-center mb-12">Simple, transparent pricing</h2>
+        <div className="grid md:grid-cols-3 gap-8 max-w-4xl mx-auto">
+          {[
+            {
+              name: 'Free',
+              price: '$0',
+              features: ['50 resolutions/month', 'Demo mode', 'Basic policy engine'],
+              cta: 'Get Started',
+              popular: false,
+            },
+            {
+              name: 'Starter',
+              price: '$29',
+              features: ['500 resolutions/month', 'Real integrations', 'Advanced policy engine', 'Analytics'],
+              cta: 'Start Trial',
+              popular: true,
+            },
+            {
+              name: 'Growth',
+              price: '$99',
+              features: ['2000 resolutions/month', 'All integrations', 'Full policy engine', 'Priority support'],
+              cta: 'Contact Sales',
+              popular: false,
+            },
+          ].map((plan) => (
+            <div
+              key={plan.name}
+              className={`p-6 rounded-xl border ${plan.popular ? 'border-primary shadow-lg scale-105' : 'border-border'}`}
+            >
+              {plan.popular && (
+                <Badge className="mb-4">Most Popular</Badge>
+              )}
+              <h3 className="text-xl font-semibold">{plan.name}</h3>
+              <div className="text-3xl font-bold mt-2">{plan.price}<span className="text-sm font-normal text-muted-foreground">/mo</span></div>
+              <ul className="mt-4 space-y-2">
+                {plan.features.map((feature) => (
+                  <li key={feature} className="flex items-center gap-2 text-sm">
+                    <CheckCircle className="h-4 w-4 text-green-500" />
+                    {feature}
+                  </li>
+                ))}
+              </ul>
+              <Button className="w-full mt-6" variant={plan.popular ? 'default' : 'outline'} asChild>
+                <Link href="/app">{plan.cta}</Link>
+              </Button>
+            </div>
+          ))}
+        </div>
+      </section>
+
+      {/* CTA */}
+      <section className="container mx-auto px-4 py-20 text-center">
+        <h2 className="text-3xl font-bold mb-4">Ready to resolve tickets faster?</h2>
+        <p className="text-muted-foreground mb-8">
+          Start for free. No credit card required. Works with demo data instantly.
+        </p>
+        <Button size="lg" asChild>
+          <Link href="/app">
+            Try it now
+            <ArrowRight className="ml-2 h-4 w-4" />
+          </Link>
+        </Button>
+      </section>
+
+      {/* Footer */}
+      <footer className="border-t">
+        <div className="container mx-auto px-4 py-8">
+          <div className="flex flex-col md:flex-row items-center justify-between gap-4">
+            <div className="flex items-center gap-2">
+              <div className="w-6 h-6 rounded bg-primary flex items-center justify-center">
+                <span className="text-primary-foreground font-bold text-xs">S</span>
+              </div>
+              <span className="font-medium">SiteGPT</span>
+            </div>
+            <p className="text-sm text-muted-foreground">
+              Verified Resolution Agent for Shopify Merchants
+            </p>
+          </div>
+        </div>
       </footer>
     </div>
-  );
+  )
 }
