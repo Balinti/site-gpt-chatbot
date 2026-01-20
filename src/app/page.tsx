@@ -1,4 +1,5 @@
 import ChatWidget from '@/components/ChatWidget';
+import GoogleAuth from '@/components/GoogleAuth';
 
 export default function Home() {
   return (
@@ -46,9 +47,7 @@ export default function Home() {
             >
               Pricing
             </a>
-            <button className="rounded-full bg-indigo-600 px-4 py-2 text-sm font-medium text-white transition-colors hover:bg-indigo-700">
-              Get Started
-            </button>
+            <GoogleAuth />
           </div>
         </div>
       </nav>
