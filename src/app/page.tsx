@@ -28,25 +28,27 @@ export default function Home() {
               SiteGPT
             </span>
           </div>
-          <div className="hidden items-center gap-8 md:flex">
-            <a
-              href="#features"
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-            >
-              Features
-            </a>
-            <a
-              href="#demo"
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-            >
-              Demo
-            </a>
-            <a
-              href="#pricing"
-              className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
-            >
-              Pricing
-            </a>
+          <div className="flex items-center gap-4 md:gap-8">
+            <div className="hidden items-center gap-8 md:flex">
+              <a
+                href="#features"
+                className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+              >
+                Features
+              </a>
+              <a
+                href="#demo"
+                className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+              >
+                Demo
+              </a>
+              <a
+                href="#pricing"
+                className="text-sm font-medium text-zinc-600 transition-colors hover:text-zinc-900 dark:text-zinc-400 dark:hover:text-zinc-100"
+              >
+                Pricing
+              </a>
+            </div>
             <GoogleAuth />
           </div>
         </div>
